@@ -2,6 +2,8 @@ package Blatt2;
 
 import java.util.ArrayList;
 
+import static Blatt2.MediaAdministation.archive;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -19,21 +21,14 @@ public class Main {
 
         ArrayList<Medium> medium = new ArrayList<>();
 
-        MediaAdministation archive = new MediaAdministation(medium);
+        //MediaAdministation archive = new MediaAdministation(medium);
+
+        MediaAdministation.getInstance(medium);
 
         archive.addMedium(b);
         archive.addMedium(v);
         archive.addMedium(c);
         archive.addMedium(eb);
-
-
-        //archive.removeMedium(1);
-
-        //archive.showMedia();
-
-        //printSpecialFields(archive);
-
-        //System.out.println(archive.getCurrentID());
 
     }
 

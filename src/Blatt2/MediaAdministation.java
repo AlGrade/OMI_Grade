@@ -6,9 +6,21 @@ public class MediaAdministation {
     private static long nextID = 0;
     ArrayList<Medium> mediaArchive;
 
-    public MediaAdministation(ArrayList<Medium> mediaArchive) {
+    //////Singleton Pattern///////
+    static MediaAdministation archive;
+
+    private MediaAdministation(ArrayList<Medium> mediaArchive) {
         this.mediaArchive = mediaArchive;
     }
+
+    public static MediaAdministation getInstance(ArrayList<Medium> medium){
+        if (MediaAdministation.archive == null){
+            MediaAdministation.archive = new MediaAdministation(medium);
+        }
+        return MediaAdministation.archive;
+    }
+    //////Singleton Pattern///////
+
 
     private static long getNextID(){
         nextID++;
